@@ -99,7 +99,6 @@ if 'SS' in gentype:
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
     decay susysq > jb n2
-    decay susysq~ > jb n2
     decay n2 > all all n1"""
 if 'GG' in gentype:
     msdecaystring="""
