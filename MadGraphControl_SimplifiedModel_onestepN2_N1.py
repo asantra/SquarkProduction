@@ -15,14 +15,21 @@ mass_string = runArgs.jobConfig[0].replace('.py','').split('N1_')[1]
 deltaM = 0 # mchi20 - mchi10 
 
 #--------------------------------------------------------------
-# MadGrpah configuration
+# MadGraph configuration
 #--------------------------------------------------------------
 if gentype=='SS':
 # Direct gluino decay to LSP (0-lepton, grid 1 last year)
-    masses['1000021'] = float( mass_string.split('_')[0] )  #gluino
+    masses['1000001'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['1000002'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['1000003'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['1000004'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['2000001'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['2000002'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['2000003'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['2000004'] = float( mass_string.split('_')[0] ) # squark mass
     masses['1000022'] = float( mass_string.split('_')[1] )  #chi10
-    masses['1000023'] = 0.5*(masses['1000021']+masses['1000022'])  #chi20
-    deltaM = 0.5*(masses['1000021'] - masses['1000022']) # (mgluino - mchi10) / 2 = mchi20 - mchi10 
+    masses['1000023'] = 0.5*(masses['1000001']+masses['1000022'])  #chi20
+    deltaM = 0.5*(masses['1000001'] - masses['1000022']) # (msquark - mchi10) / 2 = mchi20 - mchi10 
 
     if 'SL' in decaytype:
         masses['1000011'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
@@ -47,16 +54,42 @@ if gentype=='SS':
     add process p p > susylqL susylqL~ j $ go susyweak susylqR susylqR~ @2
     add process p p > susylqL susylqL~ j j $ go susyweak susylqR susylqR~ @3
     '''
+    
+if gentype=='GG':
+# Direct gluino decay to LSP (0-lepton, grid 1 last year)
+    masses['1000021'] = float( mass_string.split('_')[0] )  #gluino
+    masses['1000022'] = float( mass_string.split('_')[1] )  #chi10
+    masses['1000023'] = 0.5*(masses['1000021']+masses['1000022'])  #chi20
+    deltaM = 0.5*(masses['1000021'] - masses['1000022']) # (mgluino - mchi10) / 2 = mchi20 - mchi10 
+
+    if 'SL' in decaytype:
+        masses['1000011'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+        masses['1000012'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+        masses['1000013'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+        masses['1000014'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+        masses['1000015'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+        masses['1000016'] = 0.5*(masses['1000022']+masses['1000023'])  #slepton
+    else:
+        masses['1000011'] = 4.5e5 #slepton
+        masses['1000012'] = 4.5e5 #slepton
+        masses['1000013'] = 4.5e5 #slepton
+        masses['1000014'] = 4.5e5 #slepton
+        masses['1000015'] = 4.5e5 #slepton
+        masses['1000016'] = 4.5e5 #slepton
+    process = '''
+    generate p p > go go
+    add process p p > go go j
+    '''
 
 evgenConfig.contact  = ["arka.santra@cern.ch" ]
-if 'SS' in gentype: evgenConfig.keywords += ['simplifiedModel','squark']
 
-if 'SL' in decaytype:
-    evgenConfig.description = 'SUSY Simplified Model with gluino production and decays via sleptons with MadGraph/Pythia8, m_glu = %s GeV, m_N2 = %s GeV, m_slep = %s GeV, m_N1 = %s GeV'%(masses['1000021'],masses['1000023'],masses['1000011'],masses['1000022'])
-    evgenConfig.keywords += ['slepton']
-else:
-    evgenConfig.description = 'SUSY Simplified Model with squark production and decays via Z with MadGraph/Pythia8, m_squ = %s GeV, m_N2 = %s GeV, m_N1 = %s GeV'%(masses['1000021'],masses['1000023'],masses['1000022'])
-    evgenConfig.keywords += ['Z']
+if 'SS' in gentype: 
+    evgenConfig.keywords += ['simplifiedModel','squark','Z']
+    evgenConfig.description = 'SUSY Simplified Model with squark production and decays via Z with MadGraph/Pythia8, m_squ = %s GeV, m_N2 = %s GeV, m_N1 = %s GeV'%(masses['1000001'],masses['1000023'],masses['1000022'])
+    
+if 'GG' in gentype: 
+    evgenConfig.keywords += ['simplifiedModel','gluino', 'Z']
+    evgenConfig.description = 'SUSY Simplified Model with gluino production and decays via Z with MadGraph/Pythia8, m_glu = %s GeV, m_N2 = %s GeV, m_N1 = %s GeV'%(masses['1000021'],masses['1000023'],masses['1000022'])
 
 #--------------------------------------------------------------
 # Madspin configuration
@@ -127,7 +160,7 @@ if '2LMET100' in runArgs.jobConfig[0]:
     filtSeq.MissingEtFilter.METCut = 100*GeV            # MET > 100 GeV
   
     filtSeq.Expression = "(MultiLeptonFilter) and (MissingEtFilter)"
-    print "@@@@@@@@@@@@@@@@@@@@ Only 2L+MET100 filter @@@@@@@@@@@@@@@@@@"
+    print "@@@@@@@@@@ both 2L+MET100 filter @@@@@@@@@@"
     
     
 # Two-lepton filter
@@ -138,6 +171,7 @@ elif '2L' in runArgs.jobConfig[0]:
     filtSeq.MultiLeptonFilter.Ptcut = 5000.
     filtSeq.MultiLeptonFilter.Etacut = 2.8
     filtSeq.MultiLeptonFilter.NLeptons = 2
+    print "@@@@@@@@@@ only 2L filter @@@@@@@@@@"
     
     
 elif 'MET100' in runArgs.jobConfig[0]:
@@ -145,7 +179,8 @@ elif 'MET100' in runArgs.jobConfig[0]:
     include ( 'MC15JobOptions/MissingEtFilter.py' )
     MissingEtFilter = filtSeq.MissingEtFilter
     filtSeq.MissingEtFilter.METCut = 100*GeV
-    print "@@@@@@@@@@@@@@@@@@@@ Only MET filter @@@@@@@@@@@@@@@@@@"
+    
+    print "@@@@@@@@@@ only MET100 filter @@@@@@@@@@"
 
 
 #--------------------------------------------------------------
