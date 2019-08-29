@@ -1,6 +1,8 @@
 # Generator transform pre-include
 #  Gets us ready for on-the-fly SUSY SM generation
 include ( 'MC15JobOptions/MadGraphControl_SimplifiedModelPreInclude.py' )
+keepOutput=True
+print "@@@@@@@@@@@@############### the new madgraph control file working #####################@@@@@@@@@@@@@@@@@"
 
 gentype=runArgs.jobConfig[0].split('SM')[1].split('_')[1]
 if 'SLN1' in runArgs.jobConfig[0]: decaytype='twostepN2_SLN1'
@@ -98,8 +100,29 @@ msdecaystring = ""
 if 'SS' in gentype:
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay susysq > jb n2
+    decay ul > u n2
+    decay ur > u n2
+    decay dl > d n2
+    decay dr > d n2
+    decay cl > c n2
+    decay cr > c n2
+    decay sl > s n2
+    decay sr > s n2
+    decay ul~ > u~ n2
+    decay ur~ > u~ n2
+    decay dl~ > d~ n2
+    decay dr~ > d~ n2
+    decay cl~ > c~ n2
+    decay cr~ > c~ n2
+    decay sl~ > s~ n2
+    decay sr~ > s~ n2
     decay n2 > all all n1"""
+#if 'SS' in gentype:
+    #msdecaystring="""
+    #define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
+    #decay susylq > jb n2
+    #decay susylq~ > jb n2
+    #decay n2 > all all n1"""
 if 'GG' in gentype:
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
