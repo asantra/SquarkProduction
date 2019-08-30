@@ -47,14 +47,15 @@ if gentype=='SS':
         masses['1000014'] = 4.5e5 #slepton
         masses['1000015'] = 4.5e5 #slepton
         masses['1000016'] = 4.5e5 #slepton
+    #### MadGraph is used to decay squark, Madspin will be used to decay N2
     process = '''
     define susylqL = ul dl cl sl
     define susylqL~ = ul~ dl~ cl~ sl~
     define susylqR = ur dr cr sr
     define susylqR~ = ur~ dr~ cr~ sr~
-    generate p p > susylqL susylqL~ $ go susyweak susylqR susylqR~ @1
-    add process p p > susylqL susylqL~ j $ go susyweak susylqR susylqR~ @2
-    add process p p > susylqL susylqL~ j j $ go susyweak susylqR susylqR~ @3
+    generate p p > susylqL susylqL~, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @1
+    add process p p > susylqL susylqL~ j, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @2
+    add process p p > susylqL susylqL~ j j, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @3
     '''
     
 if gentype=='GG':
@@ -78,9 +79,11 @@ if gentype=='GG':
         masses['1000014'] = 4.5e5 #slepton
         masses['1000015'] = 4.5e5 #slepton
         masses['1000016'] = 4.5e5 #slepton
+        
+    #### MadGraph is used to decay gluino, Madspin will be used to decay N2
     process = '''
-    generate p p > go go
-    add process p p > go go j
+    generate p p > go go, go > jb jb n2, go > jb jb n2
+    add process p p > go go j, go > jb jb n2, go > jb jb n2
     '''
 
 evgenConfig.contact  = ["arka.santra@cern.ch" ]
@@ -100,23 +103,23 @@ msdecaystring = ""
 if 'SS' in gentype:
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay ul > u n2
-    decay ur > u n2
-    decay dl > d n2
-    decay dr > d n2
-    decay cl > c n2
-    decay cr > c n2
-    decay sl > s n2
-    decay sr > s n2
-    decay ul~ > u~ n2
-    decay ur~ > u~ n2
-    decay dl~ > d~ n2
-    decay dr~ > d~ n2
-    decay cl~ > c~ n2
-    decay cr~ > c~ n2
-    decay sl~ > s~ n2
-    decay sr~ > s~ n2
     decay n2 > all all n1"""
+    #decay ul > u n2
+    #decay ur > u n2
+    #decay dl > d n2
+    #decay dr > d n2
+    #decay cl > c n2
+    #decay cr > c n2
+    #decay sl > s n2
+    #decay sr > s n2
+    #decay ul~ > u~ n2
+    #decay ur~ > u~ n2
+    #decay dl~ > d~ n2
+    #decay dr~ > d~ n2
+    #decay cl~ > c~ n2
+    #decay cr~ > c~ n2
+    #decay sl~ > s~ n2
+    #
 #if 'SS' in gentype:
     #msdecaystring="""
     #define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
@@ -126,7 +129,6 @@ if 'SS' in gentype:
 if 'GG' in gentype:
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay go > jb jb n2
     decay n2 > all all n1"""
 
 if madspindecays==True:
