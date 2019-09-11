@@ -52,13 +52,11 @@ if gentype=='SS':
     #### MadGraph is used to decay squark, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in SS setup $$$$$$&&&&&&&"
     process = '''
-    define susylqL = ul dl cl sl
-    define susylqL~ = ul~ dl~ cl~ sl~
-    define susylqR = ur dr cr sr
-    define susylqR~ = ur~ dr~ cr~ sr~
-    generate p p > ul ul~ $ go susyweak susylqR susylqR~ @1
-    add process p p > ul ul~ j $ go susyweak susylqR susylqR~ @2
-    add process p p > ul ul~ j j $ go susyweak susylqR susylqR~ @3
+    define susylq = dl cl sl ur dr cr sr
+    define susylq~ = dl~ cl~ sl~ ur~ dr~ cr~ sr~
+    generate p p > ul ul~ $ go susyweak susylq susylq~ @1
+    add process p p > ul ul~ j $ go susyweak susylq susylq~ @2
+    add process p p > ul ul~ j j $ go susyweak susylq susylq~ @3
     '''
     
 if gentype=='GG':
