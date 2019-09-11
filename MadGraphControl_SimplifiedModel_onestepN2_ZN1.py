@@ -25,10 +25,12 @@ if gentype=='SS':
     masses['1000002'] = float( mass_string.split('_')[0] ) # squark mass
     masses['1000003'] = float( mass_string.split('_')[0] ) # squark mass
     masses['1000004'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['1000005'] = float( mass_string.split('_')[0] ) # squark mass
     masses['2000001'] = float( mass_string.split('_')[0] ) # squark mass
     masses['2000002'] = float( mass_string.split('_')[0] ) # squark mass
     masses['2000003'] = float( mass_string.split('_')[0] ) # squark mass
     masses['2000004'] = float( mass_string.split('_')[0] ) # squark mass
+    masses['2000005'] = float( mass_string.split('_')[0] ) # squark mass
     masses['1000022'] = float( mass_string.split('_')[1] )  #chi10
     masses['1000023'] = 0.5*(masses['1000001']+masses['1000022'])  #chi20
     deltaM = 0.5*(masses['1000001'] - masses['1000022']) # (msquark - mchi10) / 2 = mchi20 - mchi10 
