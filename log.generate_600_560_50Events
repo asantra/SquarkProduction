@@ -1,0 +1,282 @@
+13:01:48 Wed Aug  7 13:01:48 CEST 2019
+13:01:48 Preloading tcmalloc_minimal.so
+13:01:48 Preloading /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/IntelSoftware/linux/x86_64/xe2013/composer_xe_2013.3.163/compiler/lib/intel64/libintlc.so.5:/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/IntelSoftware/linux/x86_64/xe2013/composer_xe_2013.3.163/compiler/lib/intel64/libimf.so
+13:01:48 Py:Athena            INFO including file "AthenaCommon/Preparation.py"
+13:01:48 Py:Athena            INFO using release [MCProd-19.2.5.33.4] [x86_64-slc6-gcc47-opt] [19.2.X.Y.Z-VAL-MCProd/rel_0] -- built on [2018-05-23 11:02]
+13:01:48 Py:Athena            INFO including file "AthenaCommon/Bootstrap.py"
+13:01:48 Py:Athena            INFO including file "AthenaCommon/Atlas.UnixStandardJob.py"
+13:01:50 Py:Athena            INFO including file "AthenaCommon/Execution.py"
+13:01:50 Py:Athena            INFO including file "runargs.generate.py"
+13:01:50 Py:Athena            INFO including file "EvgenJobTransforms/skeleton.GENtoEVGEN.py"
+13:01:50 Py:Athena            INFO including file "AthenaCommon/Atlas_Gen.UnixStandardJob.py"
+13:01:50 Py:Athena            INFO including file "PartPropSvc/PartPropSvc.py"
+13:01:51 Py:Athena            INFO including file "../mc15joboptions/share/DSID377xxx/MC15.378122.MGPy8EG_A14N23LO_SM_GG_N2_ZN1_600_560_2LMET100_MadSpin.py"
+13:01:51 Py:Athena         WARNING using ./MadGraphControl_SimplifiedModel_onestepN2_ZN1.py instead of ../../common/MadGraph/MadGraphControl_SimplifiedModel_onestepN2_ZN1.py
+13:01:51 Py:Athena            INFO including file "../../common/MadGraph/MadGraphControl_SimplifiedModel_onestepN2_ZN1.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/MadGraphControl_SimplifiedModelPreInclude.py"
+13:01:51 Py:MadGraphUtils     INFO Found MadGraph/MadGraph5_aMC@NLO version 2.6.2
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_A14_NNPDF23LO_EvtGen_Common.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/nonStandard/Pythia8_A14_NNPDF23LO_Common.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_Base_Fragment.py"
+13:01:51 Pythia8_Base_Fragment.py: DISABLING storage of LHE record in HepMC by default. Please reenable storeage if desired
+13:01:51 Atlas release 19.2.5.33
+13:01:51 
+13:01:51 Pythia8 version: External/Pythia8 Pythia8-02-30-04 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/MCProd/19.2.5.33.4
+13:01:51 External/Pythia8 Pythia8-02-12-01 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/AtlasProduction/19.2.5.33
+13:01:51 External/Pythia8 Pythia8-02-10-00 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/AtlasSimulation/19.2.5
+13:01:51 
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_RapidityOrderMPI.py"
+13:01:51 series=2 version=30
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_EvtGen.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/EvtGen_Fragment.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_MadGraph.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/Pythia8_LHEF.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/mult_lhe_input.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/merge_lhe_files.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/find_unique_file.py"
+13:01:51 Py:Generate          INFO Will use Pythia8...
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/MultiLeptonFilter.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/MissingEtFilter.py"
+13:01:51 Py:Athena            INFO including file "MC15JobOptions/MadGraphControl_SimplifiedModelPostInclude.py"
+13:01:51 Willing to acquire file param_card.SM.GG.onestepN2_ZN1.dat from
+13:01:51 /cvmfs/atlas.cern.ch/repo/sw/Generators/MC15JobOptions/latest/common/MadGraph/param_card.SM.GG.onestepN2_ZN1.dat
+13:01:51 copy param_card.SM.GG.onestepN2_ZN1.dat
+13:01:54 Warning: get_files: nothing found for param_card_updated.dat
+13:01:54 Py:MadGraphUtils     INFO    1000011    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000012    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000013    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000014    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000015    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000016    450000.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000021    600.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000022    560.0  #
+13:01:54 Py:MadGraphUtils     INFO    1000023    580.0  #
+13:01:56 TXT.16061992._000418.events
+13:01:56 Py:MadGraphUtils     INFO Using MSSM_SLHA2 model
+13:01:56 Py:MadGraphUtils     INFO Writing process card
+13:01:56 Py:MadGraphUtils     INFO Assuming that proc_card_mg5.dat is a well-formatted process card
+13:01:56 Py:MadGraphUtils     INFO Started process generation at Wed Aug  7 13:01:56 2019
+13:01:59 [?1034h************************************************************
+13:01:59 *                                                          *
+13:01:59 *                     W E L C O M E to                     *
+13:01:59 *              M A D G R A P H 5 _ a M C @ N L O           *
+13:01:59 *                                                          *
+13:01:59 *                                                          *
+13:01:59 *                 *                       *                *
+13:01:59 *                   *        * *        *                  *
+13:01:59 *                     * * * * 5 * * * *                    *
+13:01:59 *                   *        * *        *                  *
+13:01:59 *                 *                       *                *
+13:01:59 *                                                          *
+13:01:59 *         VERSION 2.6.2                 2018-04-29         *
+13:01:59 *                                                          *
+13:01:59 *    The MadGraph5_aMC@NLO Development Team - Find us at   *
+13:01:59 *    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+13:01:59 *                            and                           *
+13:01:59 *            http://amcatnlo.web.cern.ch/amcatnlo/         *
+13:01:59 *                                                          *
+13:01:59 *               Type 'help' for in-line help.              *
+13:01:59 *           Type 'tutorial' to learn how MG5 works         *
+13:01:59 *    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+13:01:59 *    Type 'tutorial MadLoop' to learn how MadLoop works    *
+13:01:59 *                                                          *
+13:01:59 ************************************************************
+13:01:59 load MG5 configuration from ../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c/madgraph5amc/2.6.2.atlas/x86_64-slc6-gcc47-opt/input/mg5_configuration.txt
+13:01:59 [1;34m/afs/.cern.ch/sw/lcg/external/MCGenerators_lcgcmt67c/collier/1.1/x86_64-slc6-gcc47-opt does not seem to correspond to a valid collier lib . Please enter the full PATH/TO/collier/lib .
+13:01:59 You will NOT be able to run collier otherwise.
+13:01:59 [0m
+13:01:59 fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+13:01:59  Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+13:01:59  MG5_aMC> set fastjet /PATH/TO/fastjet-config
+13:01:59 
+13:01:59 /afs/.cern.ch/sw/lcg/external/MCGenerators_lcgcmt67c/lhapdf/6.1.4/x86_64-slc6-gcc47-opt/bin/lhapdf-config does not seem to correspond to a valid lhapdf-config executable.
+13:01:59 Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+13:01:59 Note that you can still compile and run aMC@NLO with the built-in PDFs
+13:01:59  MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+13:01:59 
+13:01:59 [1;34m/afs/.cern.ch/sw/lcg/external/MCGenerators_lcgcmt67c/gosam_contrib/2.0/x86_64-slc6-gcc47-opt/lib does not seem to correspond to a valid ninja lib . Please enter the full PATH/TO/ninja/lib .
+13:01:59 You will NOT be able to run ninja otherwise.
+13:01:59 [0m
+13:01:59 Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+13:01:59 Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+13:01:59 import /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/proc_card_mg5.dat
+13:01:59 The import format was not given, so we guess it as command
+13:01:59 import model MSSM_SLHA2
+13:02:00 INFO: reload from .py file
+13:02:00 INFO: load particles
+13:02:00 INFO: load vertices
+13:02:01 INFO: Restrict model MSSM_SLHA2 with file ../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c/madgraph5amc/2.6.2.atlas/x86_64-slc6-gcc47-opt/models/MSSM_SLHA2/restrict_default.dat .
+13:02:01 INFO: Run "set stdout_level DEBUG" before import for more information.
+13:02:02 INFO: Detect SLHA2 format. keeping restricted parameter in the param_card
+13:02:03 INFO: Change particles name to pass to MG5 convention
+13:02:03 Defined multiparticle p = g u c d s u~ c~ d~ s~
+13:02:03 Defined multiparticle j = g u c d s u~ c~ d~ s~
+13:02:03 Defined multiparticle l+ = e+ mu+
+13:02:03 Defined multiparticle l- = e- mu-
+13:02:03 Defined multiparticle vl = ve vm vt
+13:02:03 Defined multiparticle vl~ = ve~ vm~ vt~
+13:02:03 Defined multiparticle all = g u c d s u~ c~ d~ s~ a ve vm vt e- mu- ve~ vm~ vt~ e+ mu+ go ul cl t1 ur cr t2 dl sl b1 dr sr b2 ul~ cl~ t1~ ur~ cr~ t2~ dl~ sl~ b1~ dr~ sr~ b2~ t b t~ b~ z w+ h01 h2 h3 h+ sve svm svt el- mul- ta1- er- mur- ta2- w- h- sve~ svm~ svt~ el+ mul+ ta1+ er+ mur+ ta2+ n1 n2 n3 n4 x1+ x2+ ta- x1- x2- ta+
+13:02:03 generate p p > go go
+13:02:03 INFO: Checking for minimal orders which gives processes.
+13:02:03 INFO: Please specify coupling orders to bypass this step.
+13:02:03 INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD
+13:02:03 INFO: Trying process: g g > go go WEIGHTED<=2 @1
+13:02:03 INFO: Process has 3 diagrams
+13:02:03 INFO: Trying process: u u~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Process has 5 diagrams
+13:02:03 INFO: Trying process: u c~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Trying process: c u~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Trying process: c c~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Process has 5 diagrams
+13:02:03 INFO: Trying process: d d~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Process has 5 diagrams
+13:02:03 INFO: Trying process: d s~ > go go WEIGHTED<=2 @1
+13:02:03 INFO: Trying process: s d~ > go go WEIGHTED<=2 @1
+13:02:04 INFO: Trying process: s s~ > go go WEIGHTED<=2 @1
+13:02:04 INFO: Process has 5 diagrams
+13:02:04 INFO: Process u~ u > go go added to mirror process u u~ > go go
+13:02:04 INFO: Process c~ c > go go added to mirror process c c~ > go go
+13:02:04 INFO: Process d~ d > go go added to mirror process d d~ > go go
+13:02:04 INFO: Process s~ s > go go added to mirror process s s~ > go go
+13:02:04 5 processes with 23 diagrams generated in 0.402 s
+13:02:04 Total: 5 processes with 23 diagrams
+13:02:04 output -f
+13:02:04 INFO: initialize a new directory: PROC_MSSM_SLHA2_3
+13:02:06 INFO: remove old information in PROC_MSSM_SLHA2_3
+13:02:06 INFO: Organizing processes into subprocess groups
+13:02:06 INFO: Generating Helas calls for process: u u~ > go go WEIGHTED<=2 @1
+13:02:06 INFO: Processing color information for process: u u~ > go go @1
+13:02:06 INFO: Generating Helas calls for process: c c~ > go go WEIGHTED<=2 @1
+13:02:06 INFO: Reusing existing color information for process: c c~ > go go @1
+13:02:06 INFO: Generating Helas calls for process: d d~ > go go WEIGHTED<=2 @1
+13:02:06 INFO: Reusing existing color information for process: d d~ > go go @1
+13:02:07 INFO: Generating Helas calls for process: s s~ > go go WEIGHTED<=2 @1
+13:02:07 INFO: Reusing existing color information for process: s s~ > go go @1
+13:02:07 INFO: Generating Helas calls for process: g g > go go WEIGHTED<=2 @1
+13:02:07 INFO: Processing color information for process: g g > go go @1
+13:02:07 INFO: Creating files in directory P1_qq_gogo
+13:02:07 INFO: Generating Feynman diagrams for Process: u u~ > go go WEIGHTED<=2 @1
+13:02:07 INFO: Generating Feynman diagrams for Process: c c~ > go go WEIGHTED<=2 @1
+13:02:07 INFO: Generating Feynman diagrams for Process: d d~ > go go WEIGHTED<=2 @1
+13:02:07 INFO: Generating Feynman diagrams for Process: s s~ > go go WEIGHTED<=2 @1
+13:02:07 INFO: Finding symmetric diagrams for subprocess group qq_gogo
+13:02:07 INFO: Creating files in directory P1_gg_gogo
+13:02:07 INFO: Generating Feynman diagrams for Process: g g > go go WEIGHTED<=2 @1
+13:02:07 INFO: Finding symmetric diagrams for subprocess group gg_gogo
+13:02:07 Generated helas calls for 5 subprocesses (23 diagrams) in 0.071 s
+13:02:07 Wrote files for 74 helas calls in 0.612 s
+13:02:07 ALOHA: aloha creates FFS1 routines
+13:02:07 ALOHA: aloha creates FFS2 routines
+13:02:08 ALOHA: aloha creates FFV1 routines
+13:02:08 ALOHA: aloha creates VVV1 set of routines with options: P0
+13:02:08 save configuration file to /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3/Cards/me5_configuration.txt
+13:02:08 INFO: Use Fortran compiler gfortran
+13:02:08 INFO: Use c++ compiler g++
+13:02:08 INFO: Generate jpeg diagrams
+13:02:11 INFO: Generate web pages
+13:02:12 Output to directory /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3 done.
+13:02:12 Type "launch" to generate events from this process, or see
+13:02:12 /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3/README
+13:02:12 Run "open index.html" to see more information about this process.
+13:02:12 quit
+13:02:13 Py:MadGraphUtils     INFO Finished process generation at Wed Aug  7 13:02:13 2019
+13:02:13 Py:MadGraphUtils  WARNING Path for option fastjet not found in original config
+13:02:13 Py:MadGraphUtils     INFO Modifying config paths to avoid use of afs:
+13:02:13 Py:MadGraphUtils     INFO {'ninja': '/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c//gosam_contrib/2.0/x86_64-slc6-gcc47-opt/lib', 'lhapdf': '/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c//lhapdf/6.1.5/x86_64-slc6-gcc47-opt/bin/lhapdf-config', 'syscalc_path': '/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c//syscalc/1.1.4/x86_64-slc6-gcc47-opt', 'collier': '/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c//collier/1.1/x86_64-slc6-gcc47-opt'}
+13:02:13 Py:MadGraphUtils     INFO Unzipping generated events.
+13:02:13 gzip: /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/TXT.16061992._000418.tar.gz.1: unknown suffix -- ignored
+13:02:13 Py:MadGraphUtils     INFO Moving file over to PROC_MSSM_SLHA2_3/Events/Test/unweighted_events.lhe
+13:02:13 Py:MadGraphUtils     INFO Started madspin at Wed Aug  7 13:02:13 2019
+13:02:14 [?1034h************************************************************
+13:02:14 *                                                          *
+13:02:14 *                      W E L C O M E to                    *
+13:02:14 *             M A D G R A P H 5 _ a M C @ N L O            *
+13:02:14 *                      M A D E V E N T                     *
+13:02:14 *                                                          *
+13:02:14 *                 *                       *                *
+13:02:14 *                   *        * *        *                  *
+13:02:14 *                     * * * * 5 * * * *                    *
+13:02:14 *                   *        * *        *                  *
+13:02:14 *                 *                       *                *
+13:02:14 *                                                          *
+13:02:14 *         VERSION 2.6.2                 20xx-xx-xx         *
+13:02:14 *                                                          *
+13:02:14 *    The MadGraph5_aMC@NLO Development Team - Find us at   *
+13:02:14 *    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+13:02:14 *                                                          *
+13:02:14 *               Type 'help' for in-line help.              *
+13:02:14 *                                                          *
+13:02:14 ************************************************************
+13:02:14 INFO: load configuration from /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3/Cards/me5_configuration.txt
+13:02:14 INFO: load configuration from /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/MCGenerators_lcgcmt67c/madgraph5amc/2.6.2.atlas/x86_64-slc6-gcc47-opt/input/mg5_configuration.txt
+13:02:14 INFO: load configuration from /afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3/Cards/me5_configuration.txt
+13:02:14 Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+13:02:14 Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+13:02:14 import command madspin_decay_cmd
+13:02:14 decay_events Test
+13:02:15 INFO: Running MadSpin
+13:02:15 Do you want to edit a card (press enter to bypass editing)?
+13:02:15 /------------------------------------------------------------\
+13:02:15 |  [31m1[0m. madspin : [32mmadspin_card.dat[0m                             |
+13:02:15 \------------------------------------------------------------/
+13:02:15  you can also
+13:02:15    - enter the path to a valid card.
+13:02:15  [[4m0[0m, done, 1, madspin, enter path]
+13:02:15 [1mThe answer to the previous question is not set in your input file[0m
+13:02:15 [1mUse 0 value[0m
+13:02:15 INFO: This functionality allows for the decay of resonances
+13:02:15 INFO: in a .lhe file, keeping track of the spin correlation effets.
+13:02:15 INFO: BE AWARE OF THE CURRENT LIMITATIONS:
+13:02:15 INFO:   (1) Only a succession of 2 body decay are currently allowed
+13:02:15 ************************************************************
+13:02:15 *                                                          *
+13:02:15 *           W E L C O M E  to  M A D S P I N               *
+13:02:15 *                                                          *
+13:02:15 ************************************************************
+13:02:16 INFO: Extracting the banner ...
+13:02:16 INFO: process: p p > go go
+13:02:16 INFO: options: $ susysq susysq~
+13:02:16 INFO: detected model: MSSM_SLHA2. Loading...
+13:02:39 set BW_cut 100                # cut on how far the particle can be off-shell
+13:02:39 set max_weight_ps_point 400  # number of PS to estimate the maximum for each event
+13:02:39 set seed 12345
+13:02:39 set spinmode none
+13:02:39 define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
+13:02:39 define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
+13:02:39 Defined multiparticle all = u d c s u~ d~ c~ s~ e- mu- ve vm vt e+ mu+ ve~ vm~ vt~ b b~ ta- ta+
+13:02:39 decay go > jb jb n2
+13:02:39 decay n2 > all all n1
+13:02:39 launch
+13:02:40 INFO: generate 4800 decay event for particle go
+13:02:49 stty: standard input: Inappropriate ioctl for device
+13:03:00 [1;31mCommand "import command madspin_decay_cmd" interrupted in sub-command:
+13:03:00 "decay_events Test" with error:
+13:03:00 ZeroResult :  No Phase Space. Please check particle masses.
+13:03:00 
+13:03:00 Please report this bug on https://bugs.launchpad.net/mg5amcnlo
+13:03:00 More information is found in '/afs/cern.ch/work/a/asantra/public/GenerateN2ZN1/Run/PROC_MSSM_SLHA2_3/Test_tag_2_debug.log'.
+13:03:00 Please attach this file to your report.[0m
+13:03:00 INFO:
+13:03:00 quit
+13:03:00 INFO:
+13:03:00 launch in debug mode
+13:03:00 Py:MadGraphUtils     INFO Finished running madspin at Wed Aug  7 13:03:00 2019
+13:03:00 Shortened traceback (most recent user call last):
+13:03:00   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/MCProd/19.2.5.33.4/InstallArea/jobOptions/EvgenJobTransforms/skeleton.GENtoEVGEN.py", line 225, in <module>
+13:03:00     include(jo)
+13:03:00   File "../mc15joboptions/share/DSID377xxx/MC15.378122.MGPy8EG_A14N23LO_SM_GG_N2_ZN1_600_560_2LMET100_MadSpin.py", line 1, in <module>
+13:03:00     include("../../common/MadGraph/MadGraphControl_SimplifiedModel_onestepN2_ZN1.py")
+13:03:00   File "./MadGraphControl_SimplifiedModel_onestepN2_ZN1.py", line 219, in <module>
+13:03:00     include('MC15JobOptions/MadGraphControl_SimplifiedModelPostInclude.py')
+13:03:00   File "_joproxy15/common/MadGraph/MC15JobOptions/MadGraphControl_SimplifiedModelPostInclude.py", line 128, in <module>
+13:03:00     if madspin_card is not None: run_madspin(madspin_card,runArgs,keepOutput)
+13:03:00   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/MCProd/19.2.5.33.4/InstallArea/python/MadGraphControl/MadGraphUtils.py", line 1308, in run_madspin
+13:03:00     shutil.move(process_dir+'/Events/'+run_name+'_decayed_1/unweighted_events.lhe.gz',process_dir+'/Events/'+run_name+'/events.lhe.gz')
+13:03:00   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/Python/2.7.3/x86_64-slc6-gcc47-opt/lib/python2.7/shutil.py", line 299, in move
+13:03:00     copy2(src, real_dst)
+13:03:00   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/Python/2.7.3/x86_64-slc6-gcc47-opt/lib/python2.7/shutil.py", line 128, in copy2
+13:03:00     copyfile(src, dst)
+13:03:00   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc47-opt/19.2.5/sw/lcg/external/Python/2.7.3/x86_64-slc6-gcc47-opt/lib/python2.7/shutil.py", line 82, in copyfile
+13:03:00     with open(src, 'rb') as fsrc:
+13:03:00 IOError: [Errno 2] No such file or directory: 'PROC_MSSM_SLHA2_3/Events/Test_decayed_1/unweighted_events.lhe.gz'
+13:03:00 Py:Athena            INFO leaving with code 8: "an unknown exception occurred"

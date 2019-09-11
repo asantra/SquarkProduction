@@ -49,29 +49,15 @@ if gentype=='SS':
         masses['1000016'] = 4.5e5 #slepton
     #### MadGraph is used to decay squark, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in SS setup $$$$$$&&&&&&&"
-    #process = '''
-    #define susylqL = ul dl cl sl
-    #define susylqL~ = ul~ dl~ cl~ sl~
-    #define susylqR = ur dr cr sr
-    #define susylqR~ = ur~ dr~ cr~ sr~
-    #generate p p > susylqL susylqL~, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @1
-    #add process p p > susylqL susylqL~ j, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @2
-    #add process p p > susylqL susylqL~ j j, susylqL > jb n2, susylqL~ > jb n2 $ go susyweak susylqR susylqR~ @3
-    #'''
-    
     process = '''
     define susylqL = ul dl cl sl
     define susylqL~ = ul~ dl~ cl~ sl~
     define susylqR = ur dr cr sr
     define susylqR~ = ur~ dr~ cr~ sr~
     generate p p > ul ul~ $ go susyweak susylqR susylqR~ @1
-    generate p p > ul ul~ j $ go susyweak susylqR susylqR~ @1
-    generate p p > ul ul~ j j $ go susyweak susylqR susylqR~ @1
+    add process p p > ul ul~ j $ go susyweak susylqR susylqR~ @2
+    add process p p > ul ul~ j j $ go susyweak susylqR susylqR~ @3
     '''
-    
-    #generate p p > susylqL susylqL~ $ go susyweak susylqR susylqR~ @1
-    #add process p p > susylqL susylqL~ j $ go susyweak susylqR susylqR~ @2
-    #add process p p > susylqL susylqL~ j j $ go susyweak susylqR susylqR~ @3
     
 if gentype=='GG':
 # Direct gluino decay to LSP (0-lepton, grid 1 last year)
@@ -97,14 +83,9 @@ if gentype=='GG':
         
     #### MadGraph is used to decay gluino, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in GG setup $$$$$$&&&&&&&"
-    #process = '''
-    #generate p p > go go, go > jb jb n2, go > jb jb n2
-    #add process p p > go go j, go > jb jb n2, go > jb jb n2
-    #'''
-    
     process = '''
-    generate p p > go go
-    add process p p > go go j
+    generate p p > go go, go > jb jb n2, go > jb jb n2
+    add process p p > go go j, go > jb jb n2, go > jb jb n2
     '''
 
 evgenConfig.contact  = ["arka.santra@cern.ch" ]
@@ -125,14 +106,14 @@ if 'SS' in gentype:
     print "$$$&&&&&&&&&&& in SS setup in MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay ul > u n2, n2 > all all n1"""
+    decay ul > u n2
+    decay n2 > all all n1"""
     
 if 'GG' in gentype:
     print "$$$&&&&&&&&&&& in GG setup MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay go > jb jb n2, n2 > all all n1
-    """
+    decay n2 > all all n1"""
 
 if madspindecays==True:
   if msdecaystring=="":
@@ -184,7 +165,7 @@ filters=[]
 
 # Two-lepton+Met filter
 if '2LMET100' in runArgs.jobConfig[0]:
-    evt_multiplier = 50
+    evt_multiplier = 20
     include('MC15JobOptions/MultiLeptonFilter.py')
     MultiLeptonFilter = filtSeq.MultiLeptonFilter
     filtSeq.MultiLeptonFilter.Ptcut = 5000.
