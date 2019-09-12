@@ -52,11 +52,11 @@ if gentype=='SS':
     #### MadGraph is used to decay squark, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in SS setup $$$$$$&&&&&&&"
     process = '''
-    define susylq = dl cl sl ur dr cr sr
-    define susylq~ = dl~ cl~ sl~ ur~ dr~ cr~ sr~
-    generate p p > ul ul~ $ go susyweak susylq susylq~ @1
-    add process p p > ul ul~ j $ go susyweak susylq susylq~ @2
-    add process p p > ul ul~ j j $ go susyweak susylq susylq~ @3
+    define susylqA = dl cl sl ur dr cr sr
+    define susylqA~ = dl~ cl~ sl~ ur~ dr~ cr~ sr~
+    generate p p > ul ul~ $ go susyweak susylqA susylqA~ @1
+    add process p p > ul ul~ j $ go susyweak susylqA susylqA~ @2
+    add process p p > ul ul~ j j $ go susyweak susylqA susylqA~ @3
     '''
     
 if gentype=='GG':
@@ -106,8 +106,8 @@ if 'SS' in gentype:
     print "$$$&&&&&&&&&&& in SS setup in MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay ul > u n2
-    decay n2 > all all n1"""
+    decay ul > u n2, n2 > all all n1
+    """
     
 if 'GG' in gentype:
     print "$$$&&&&&&&&&&& in GG setup MadSpin $$$$$$&&&&&&&"
