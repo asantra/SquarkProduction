@@ -6,6 +6,7 @@ print "@@@@@@@@@@@@############### the new madgraph control file working #######
 
 gentype=runArgs.jobConfig[0].split('SM')[1].split('_')[1]
 if 'SLN1' in runArgs.jobConfig[0]: decaytype='twostepN2_SLN1'
+elif 'offshellZN1' in runArgs.jobConfig[0]: decaytype='onestepN2_offshellZN1'
 elif 'ZN1' in runArgs.jobConfig[0]: decaytype='onestepN2_ZN1'
 
 # special to handle MadSpin configuration via JO name:
@@ -51,13 +52,22 @@ if gentype=='SS':
         masses['1000016'] = 4.5e5 #slepton
     #### MadGraph is used to decay squark, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in SS setup $$$$$$&&&&&&&"
+    #process = '''
+    #define susylqA = dl cl sl ur dr cr sr
+    #define susylqA~ = dl~ cl~ sl~ ur~ dr~ cr~ sr~
+    #generate p p > ul ul~ $ go susyweak susylqA susylqA~ @1
+    #add process p p > ul ul~ j $ go susyweak susylqA susylqA~ @2
+    #add process p p > ul ul~ j j $ go susyweak susylqA susylqA~ @3
+    #'''
+    
     process = '''
-    define susylqA = dl cl sl ur dr cr sr
-    define susylqA~ = dl~ cl~ sl~ ur~ dr~ cr~ sr~
-    generate p p > ul ul~ $ go susyweak susylqA susylqA~ @1
-    add process p p > ul ul~ j $ go susyweak susylqA susylqA~ @2
-    add process p p > ul ul~ j j $ go susyweak susylqA susylqA~ @3
+    define susylqA = ul dl cl sl ur dr cr sr
+    define susylqA~ = ul~ dl~ cl~ sl~ ur~ dr~ cr~ sr~
+    generate p p > susylqA susylqA~, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @1
+    add process p p > susylqA susylqA~ j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @2
+    add process p p > susylqA susylqA~ j j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @3
     '''
+    print "!!!!!!!!!!!process: MadGraph decaying squark with two jets  !!!!!!!!!!!!!!!!!!!!!"
     
 if gentype=='GG':
 # Direct gluino decay to LSP (0-lepton, grid 1 last year)
@@ -84,8 +94,9 @@ if gentype=='GG':
     #### MadGraph is used to decay gluino, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in GG setup $$$$$$&&&&&&&"
     process = '''
-    generate p p > go go, go > jb jb n2, go > jb jb n2
-    add process p p > go go j, go > jb jb n2, go > jb jb n2
+    generate p p > go go
+    add process p p > go go j
+    add process p p > go go j j
     '''
 
 evgenConfig.contact  = ["arka.santra@cern.ch" ]
@@ -106,14 +117,14 @@ if 'SS' in gentype:
     print "$$$&&&&&&&&&&& in SS setup in MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay ul > u n2, n2 > all all n1
+    decay n2 > all all n1
     """
     
 if 'GG' in gentype:
-    print "$$$&&&&&&&&&&& in GG setup MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay n2 > all all n1"""
+    decay go > jb jb n2, n2 > all all n1
+    """
 
 if madspindecays==True:
   if msdecaystring=="":
@@ -165,7 +176,7 @@ filters=[]
 
 # Two-lepton+Met filter
 if '2LMET100' in runArgs.jobConfig[0]:
-    evt_multiplier = 20
+    evt_multiplier = 200
     include('MC15JobOptions/MultiLeptonFilter.py')
     MultiLeptonFilter = filtSeq.MultiLeptonFilter
     filtSeq.MultiLeptonFilter.Ptcut = 5000.
@@ -205,6 +216,16 @@ if "ZN1" in decaytype and deltaM <= 20 and madspindecays==False:
 
 njets = 1
 include('MC15JobOptions/MadGraphControl_SimplifiedModelPostInclude.py')
+
+
+#### this is to use the MCORE settings
+if 'ATHENA_PROC_NUMBER' in os.environ:
+    print 'Noticed that you have run with an athena MP-like whole-node setup.  Will re-configure now to make sure that the remainder of the job runs serially.'
+    njobs = os.environ.pop('ATHENA_PROC_NUMBER')
+    # Try to modify the opts underfoot
+    if not hasattr(opts,'nprocs'): print 'Did not see option!'
+    else: opts.nprocs = 0
+    print opts
 
 if njets>0:
     genSeq.Pythia8.Commands += [ "Merging:Process = guess" ]
