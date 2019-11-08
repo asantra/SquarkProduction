@@ -1,7 +1,6 @@
 # Generator transform pre-include
 #  Gets us ready for on-the-fly SUSY SM generation
 include ( 'MC15JobOptions/MadGraphControl_SimplifiedModelPreInclude.py' )
-keepOutput=True
 print "@@@@@@@@@@@@############### the new madgraph control file working #####################@@@@@@@@@@@@@@@@@"
 
 gentype=runArgs.jobConfig[0].split('SM')[1].split('_')[1]
@@ -61,13 +60,13 @@ if gentype=='SS':
     #'''
     
     process = '''
-    define susylqA = ul dl cl sl ur dr cr sr
-    define susylqA~ = ul~ dl~ cl~ sl~ ur~ dr~ cr~ sr~
+    define susylqA = ul dl cl sl ur dr cr sr b1 b2
+    define susylqA~ = ul~ dl~ cl~ sl~ ur~ dr~ cr~ sr~ b1~ b2~
     generate p p > susylqA susylqA~, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @1
     add process p p > susylqA susylqA~ j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @2
     add process p p > susylqA susylqA~ j j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @3
     '''
-    print "!!!!!!!!!!!process: MadGraph decaying squark with two jets  !!!!!!!!!!!!!!!!!!!!!"
+    print "!!!!!!!!!!!process: MadGraph decaying 5 flavor squark with two jets  !!!!!!!!!!!!!!!!!!!!!"
     
 if gentype=='GG':
 # Direct gluino decay to LSP (0-lepton, grid 1 last year)
@@ -94,9 +93,8 @@ if gentype=='GG':
     #### MadGraph is used to decay gluino, Madspin will be used to decay N2
     print "$$$&&&&&&&&&&& in GG setup $$$$$$&&&&&&&"
     process = '''
-    generate p p > go go
-    add process p p > go go j
-    add process p p > go go j j
+    generate p p > go go, go > jb jb n2, go > jb jb n2
+    add process p p > go go j, go > jb jb n2, go > jb jb n2
     '''
 
 evgenConfig.contact  = ["arka.santra@cern.ch" ]
@@ -121,10 +119,10 @@ if 'SS' in gentype:
     """
     
 if 'GG' in gentype:
+    print "$$$&&&&&&&&&&& in GG setup MadSpin $$$$$$&&&&&&&"
     msdecaystring="""
     define all = e+ e- mu+ mu- ta+ ta- u u~ d d~ c c~ s s~ b b~ ve vm vt ve~ vm~ vt~
-    decay go > jb jb n2, n2 > all all n1
-    """
+    decay n2 > all all n1"""
 
 if madspindecays==True:
   if msdecaystring=="":
@@ -176,7 +174,7 @@ filters=[]
 
 # Two-lepton+Met filter
 if '2LMET100' in runArgs.jobConfig[0]:
-    evt_multiplier = 200
+    evt_multiplier = 400
     include('MC15JobOptions/MultiLeptonFilter.py')
     MultiLeptonFilter = filtSeq.MultiLeptonFilter
     filtSeq.MultiLeptonFilter.Ptcut = 5000.
