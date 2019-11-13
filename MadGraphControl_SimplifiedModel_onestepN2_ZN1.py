@@ -213,6 +213,12 @@ if "ZN1" in decaytype and deltaM <= 20 and madspindecays==False:
     print "Mass difference smaller than 20 GeV, m_N2 - m_N1 = ", deltaM, ", need to decay the Z using madspin for this to work. Exiting..." 
     sys.exit()
 
+if madspindecays==True:
+    extras['pdgs_for_merging_cut'] = '1, 2, 3, 4, 5, 21'
+else:
+    extras['pdgs_for_merging_cut'] = '1, 2, 3, 4, 21'
+    
+
 njets = 1
 include('MC15JobOptions/MadGraphControl_SimplifiedModelPostInclude.py')
 
