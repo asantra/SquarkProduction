@@ -57,7 +57,7 @@ BLOCK EXTPAR  # Input parameters - non-minimal models
 #
 BLOCK MASS  # Mass Spectrum
 # PDG code           mass       particle
-         5     4.80000000E+00   # b-quark pole mass (extracted)
+         5     4.80000000E+00   # b-quark pole mass (extracted), putting this to zero explicitly to use five flavour scheme
          6     1.72500000E+02   # t-quark pole mass (not read by ME)
         24     8.03990000E+01   # W+
         25     1.25000000E+02   # h
@@ -603,9 +603,20 @@ DECAY   1000037     2.23350902E+00   # chargino2+ decays
 DECAY   1000022     0.00000000E+00   # neutralino1 decays
 #
 #         PDG            Width
-DECAY   1000023     9.37327589E-04   # neutralino2 decays
-#          BR         NDA      ID1       ID2
-     0.00000000E+00    2     1000022        23   # BR(~chi_20 -> ~chi_10   Z )
+DECAY   1000023     9.37327589E-04   # neutralino2 decays (offshell decay BRs are taken from Z BRs)
+#          BR         NDA      ID1       ID2     (ID3)
+     1.00000000E+00    2     1000022        23         # BR(~chi_20 -> ~chi_10   Z )
+     0.00000000E+00    3     1000022        11   -11   # BR(~chi_20 -> ~chi_10   e+ e- )
+     0.00000000E+00    3     1000022        13   -13   # BR(~chi_20 -> ~chi_10   mu+ mu- )
+     0.00000000E+00    3     1000022        15   -15   # BR(~chi_20 -> ~chi_10   tau+ tau- )
+     0.00000000E+00    3     1000022        12   -12   # BR(~chi_20 -> ~chi_10   nu_e nu_e~ )
+     0.00000000E+00    3     1000022        14   -14   # BR(~chi_20 -> ~chi_10   nu_mu nu_mu~ )
+     0.00000000E+00    3     1000022        16   -16   # BR(~chi_20 -> ~chi_10   nu_tau nu_tau~ )
+     0.00000000E+00    3     1000022         2   -2    # BR(~chi_20 -> ~chi_10   u ub )
+     0.00000000E+00    3     1000022         1   -1    # BR(~chi_20 -> ~chi_10   d db )
+     0.00000000E+00    3     1000022         4   -4    # BR(~chi_20 -> ~chi_10   c cb )
+     0.00000000E+00    3     1000022         3   -3    # BR(~chi_20 -> ~chi_10   s sb )
+     0.00000000E+00    3     1000022         5   -5    # BR(~chi_20 -> ~chi_10   b bb )
      0.00000000E+00    2     1000024       -24   # BR(~chi_20 -> ~chi_1+   W-)
      0.00000000E+00    2    -1000024        24   # BR(~chi_20 -> ~chi_1-   W+)
      0.00000000E+00    2     1000037       -24   # BR(~chi_20 -> ~chi_2+   W-)
@@ -641,24 +652,24 @@ DECAY   1000023     9.37327589E-04   # neutralino2 decays
      0.00000000E+00    2    -1000005         5   # BR(~chi_20 -> ~b_1*     b )
      0.00000000E+00    2     2000005        -5   # BR(~chi_20 -> ~b_2      bb)
      0.00000000E+00    2    -2000005         5   # BR(~chi_20 -> ~b_2*     b )
-     8.33333333E-02    2     1000011       -11   # BR(~chi_20 -> ~e_L-     e+)
-     8.33333333E-02    2    -1000011        11   # BR(~chi_20 -> ~e_L+     e-)
+     0.00000000E+00    2     1000011       -11   # BR(~chi_20 -> ~e_L-     e+)
+     0.00000000E+00    2    -1000011        11   # BR(~chi_20 -> ~e_L+     e-)
      0.00000000E+00    2     2000011       -11   # BR(~chi_20 -> ~e_R-     e+)
      0.00000000E+00    2    -2000011        11   # BR(~chi_20 -> ~e_R+     e-)
-     8.33333333E-02    2     1000013       -13   # BR(~chi_20 -> ~mu_L-    mu+)
-     8.33333333E-02    2    -1000013        13   # BR(~chi_20 -> ~mu_L+    mu-)
+     0.00000000E+00    2     1000013       -13   # BR(~chi_20 -> ~mu_L-    mu+)
+     0.00000000E+00    2    -1000013        13   # BR(~chi_20 -> ~mu_L+    mu-)
      0.00000000E+00    2     2000013       -13   # BR(~chi_20 -> ~mu_R-    mu+)
      0.00000000E+00    2    -2000013        13   # BR(~chi_20 -> ~mu_R+    mu-)
-     8.33333333E-02    2     1000015       -15   # BR(~chi_20 -> ~tau_1-   tau+)
-     8.33333333E-02    2    -1000015        15   # BR(~chi_20 -> ~tau_1+   tau-)
+     0.00000000E+00    2     1000015       -15   # BR(~chi_20 -> ~tau_1-   tau+)
+     0.00000000E+00    2    -1000015        15   # BR(~chi_20 -> ~tau_1+   tau-)
      0.00000000E+00    2     2000015       -15   # BR(~chi_20 -> ~tau_2-   tau+)
      0.00000000E+00    2    -2000015        15   # BR(~chi_20 -> ~tau_2+   tau-)
-     8.33333333E-02    2     1000012       -12   # BR(~chi_20 -> ~nu_eL    nu_eb)
-     8.33333333E-02    2    -1000012        12   # BR(~chi_20 -> ~nu_eL*   nu_e )
-     8.33333333E-02    2     1000014       -14   # BR(~chi_20 -> ~nu_muL   nu_mub)
-     8.33333333E-02    2    -1000014        14   # BR(~chi_20 -> ~nu_muL*  nu_mu )
-     8.33333333E-02    2     1000016       -16   # BR(~chi_20 -> ~nu_tau1  nu_taub)
-     8.33333333E-02    2    -1000016        16   # BR(~chi_20 -> ~nu_tau1* nu_tau )
+     0.00000000E+00    2     1000012       -12   # BR(~chi_20 -> ~nu_eL    nu_eb)
+     0.00000000E+00    2    -1000012        12   # BR(~chi_20 -> ~nu_eL*   nu_e )
+     0.00000000E+00    2     1000014       -14   # BR(~chi_20 -> ~nu_muL   nu_mub)
+     0.00000000E+00    2    -1000014        14   # BR(~chi_20 -> ~nu_muL*  nu_mu )
+     0.00000000E+00    2     1000016       -16   # BR(~chi_20 -> ~nu_tau1  nu_taub)
+     0.00000000E+00    2    -1000016        16   # BR(~chi_20 -> ~nu_tau1* nu_tau )
 #
 #         PDG            Width
 DECAY   1000025     2.16222723E+00   # neutralino3 decays
