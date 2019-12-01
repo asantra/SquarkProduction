@@ -53,8 +53,8 @@ if gentype=='SS':
     print "$$$&&&&&&&&&&& in SS setup $$$$$$&&&&&&&"
     
     process = '''
-    define susylqA = ul dl cl sl ur dr cr sr b1 b2
-    define susylqA~ = ul~ dl~ cl~ sl~ ur~ dr~ cr~ sr~ b1~ b2~
+    define susylqA = ul dl cl sl ur dr cr sr
+    define susylqA~ = ul~ dl~ cl~ sl~ ur~ dr~ cr~ sr~
     generate p p > susylqA susylqA~, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @1
     add process p p > susylqA susylqA~ j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @2
     add process p p > susylqA susylqA~ j j, susylqA > jb n2, susylqA~ > jb n2 $ go susyweak @3
